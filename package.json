@@ -1,7 +1,11 @@
 {
   "name": "",
-  "version": "",
-  "main": "",
+  "version": "1.0.0",
+  "main": "index.html",
   "author": "",
-  "license": ""
+  "license": "",
+  "devDependencies": {
+    "browser-sync": "^2.27.9",
+    "gulp": "^4.0.2"
+  }
 }
