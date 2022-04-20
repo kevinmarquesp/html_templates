@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist/js/",
+        "target": "ES6",
+        "noEmitOnError": true,
+        "noImplicitAny": true
+    },
+
+    "include": [
+        "./src/ts/**/*.ts"
+    ],
+
+    "exclude": [
+        "./src/ts/**/*.d.ts"
+    ]
+}
