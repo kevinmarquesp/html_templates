@@ -5,7 +5,8 @@
   "author": "",
   "license": "",
   "scripts": {
-      "dev": "gulp watch"
+    "dev": "gulp watch",
+    "sass-compile": "gulp sass"
   },
   "devDependencies": {
     "browser-sync": "^2.27.9",
