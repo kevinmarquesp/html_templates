@@ -1,1 +1,23 @@
 @import 'base/reset.css';
+
+
+:root {
+    --bg: black;
+    --game-borders-color: white;
+    --game-borders-width: 2px;
+}
+
+
+body {
+    display: grid;
+    place-items: center;
+
+    background-color: var(--bg);
+}
+
+
+#game {
+    border: var(--game-borders-width) solid var(--game-borders-color);
+    image-rendering: pixelated;
+    transform: scale(1.5);
+}
