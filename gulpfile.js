@@ -1,5 +1,25 @@
 const gulp = require('gulp');
 const browser_sync = require('browser-sync');
+const gulp_sass = require('gulp-sass')(require('sass'));
+
+const sass_config = {
+    include_files: './src/scss/**/*.scss',
+    out_dir: './dist/css/'
+}
+
+
+/*  ---------------------------
+ *  Compile the SCSS files once
+ *      More info on: https://www.npmjs.com/package/gulp-sass
+ */
+
+function sass() {
+    return gulp.src(sass_config.include_files)
+        .pipe(gulp_sass())
+        .pipe(gulp.dest(sass_config.out_dir))
+        .pipe(browser_sync.stream());
+}
+
 
 /*  -----------------------------------------
  *  Watch all files and init the local server
@@ -17,6 +37,8 @@ function watch() {
     });
 
 
+    gulp.watch(sass_config.include_files, sass);
+
     gulp.watch('./**/*.html')
         .on('change', browser_sync.reload);
 
@@ -29,4 +51,5 @@ function watch() {
  *  Export of functions as gulp commands
  */
 
-exports.watch = watch;
+exports.watch = watch;  // $ gulp watch
+exports.sass = sass;    // $ gulp sass
